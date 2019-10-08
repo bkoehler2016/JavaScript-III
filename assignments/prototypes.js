@@ -36,7 +36,7 @@ function CharacterStats(stats) {
 
 CharacterStats.prototype = Object.create(GameObject.prototype);
 
-CharacterStats.prototype.takeDamage = function () {
+CharacterStats.prototype.takeDamage = () => {
   return `${this.name} took damage.`;
 };
 
