@@ -172,5 +172,5 @@ Villain.prototype = Object.create(Humanoid.prototype);
 
 console.log(`${Jedi.name} hits ${Sith.name} with ${Jedi.weapons} `);
 console.log(Sith.takeDamage());
-console.log(`${Sith.name} hits ${Jedi.name} with ${Sith.weapons[1]}`);
+console.log(`${Sith.name} shoots ${Jedi.name} with ${Sith.weapons[1]}`);
 console.log(Jedi.takeDamage());
