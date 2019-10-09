@@ -20,7 +20,7 @@ function GameObject(attribute) {
   this.name = attribute.name;
   this.dimensions = attribute.dimensions;
 }
-GameObject.prototype.destroy = function() {
+GameObject.prototype.destroy = function () {
   return `${this.name} was removed from the game.`;
 };
 /*
@@ -36,7 +36,7 @@ function CharacterStats(stats) {
 
 CharacterStats.prototype = Object.create(GameObject.prototype);
 
-CharacterStats.prototype.takeDamage = function() {
+CharacterStats.prototype.takeDamage = function () {
   return `${this.name} took damage.`;
 };
 
@@ -57,7 +57,7 @@ function Humanoid(profile) {
 }
 Humanoid.prototype = Object.create(CharacterStats.prototype);
 
-Humanoid.prototype.greet = function() {
+Humanoid.prototype.greet = function () {
   return `${this.name} offers a greeting in ${this.language}.`;
 };
 /*
@@ -131,7 +131,7 @@ const Sith = new Humanoid({
     height: 4
   },
   healthPoints: 40,
-  name: 'Anakin',
+  name: 'Darth Vader',
   team: 'Imperial',
   weapons: ['LightSaber', 'Blaster'],
   language: 'Common'
@@ -159,7 +159,7 @@ function Hero(heroAttr) {
 }
 Hero.prototype = Object.create(Humanoid.prototype);
 
-Hero.prototype.spcialWeapon = function() {
+Hero.prototype.spcialWeapon = function () {
   return `lose 15 health points!`;
 };
 
@@ -170,15 +170,11 @@ function Villain(villainAtr) {
 
 Villain.prototype = Object.create(Humanoid.prototype);
 
-Villain.prototype.spcialWeapon = function() {
+Villain.prototype.spcialWeapon = function () {
   return `lose 40 health points!`;
 };
-console.log(Jedi.name);
-console.log(`Has ${Jedi.weapons} `);
+
 console.log(`${Jedi.name} hits ${Sith.name} with ${Jedi.weapons} `);
-console.log(`${Sith.name} takes 15 points of damage`);
-console.log(
-  `Vader shoots ${Jedi.name} with ${Sith.weapons[1]} ${
-    Jedi.name
-  } takes 10 points of damage`
-);
+console.log(Sith.takeDamage());
+console.log(`${Sith.name} hits ${Jedi.name} with ${Sith.weapons[1]}`);
+console.log(Jedi.takeDamage());
