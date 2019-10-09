@@ -1,10 +1,10 @@
 /* The for principles of "this";
  * in your own words. explain the four principle for the "this" keyword below.
  *
- * 1. Window binding which is everything.
+ * 1. Window binding targets   everything.
  * 2. this is used for dot notation
  * 3. new binding uses the constructor which is a receipe for the attributes.
- * 4. Explict binding is used for call and appl.
+ * 4. Explict binding is used for call and apply.
  * The call() method takes arguments separately.
  * The apply() method takes arguments as an array.
  *
@@ -24,7 +24,7 @@ sayName("D'Artagnan");
 // code example for Implicit Binding
 const myObj = {
   greeting: 'Hello',
-  sayHello: function(name) {
+  sayHello: function (name) {
     console.log(`${this.greeting} my name is ${name}`);
     console.log(this);
   }
@@ -32,13 +32,17 @@ const myObj = {
 myObj.sayHello('Ryan');
 
 const sayNameFunc = obj => {
-  obj.sayName = function() {
+  obj.sayName = function () {
     console.log(`Hello my name is ${this.name}`);
     console.log(this);
   };
 };
-const me = { name: 'Ryan' };
-const you = { name: 'Freddy' };
+const me = {
+  name: 'Ryan'
+};
+const you = {
+  name: 'Freddy'
+};
 sayNameFunc(me);
 sayNameFunc(you);
 
@@ -52,7 +56,7 @@ you.sayName();
 function CordialPerson(greeter) {
   this.greeting = 'Hello ';
   this.greeter = greeter;
-  this.speak = function() {
+  this.speak = function () {
     console.log(this.greeting + this.greeter);
     console.log(this);
   };
