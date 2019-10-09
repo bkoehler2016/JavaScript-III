@@ -159,9 +159,7 @@ function Hero(heroAttr) {
 }
 Hero.prototype = Object.create(Humanoid.prototype);
 
-Hero.prototype.spcialWeapon = function () {
-  return `lose 15 health points!`;
-};
+
 
 function Villain(villainAtr) {
   Humanoid.call(this, villainAtr);
@@ -170,9 +168,7 @@ function Villain(villainAtr) {
 
 Villain.prototype = Object.create(Humanoid.prototype);
 
-Villain.prototype.spcialWeapon = function () {
-  return `lose 40 health points!`;
-};
+
 
 console.log(`${Jedi.name} hits ${Sith.name} with ${Jedi.weapons} `);
 console.log(Sith.takeDamage());
